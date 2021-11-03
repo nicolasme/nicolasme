@@ -8,11 +8,13 @@
     const screenWidth = window.screen.width
     const qrWidth = screenWidth * 0.8
 
+    console.log(screenWidth, qrWidth)
+
     const html5QrCode = new Html5Qrcode("reader");
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
     };
-    const config = { fps: 10, qrbox: { width: qrWidth, height: qrWidth } };
+    const config = { fps: 5, qrbox: { width: qrWidth, height: qrWidth } };
 
     html5QrCode.start({ facingMode: "environment" }, config, qrCodeSuccessCallback);
 
