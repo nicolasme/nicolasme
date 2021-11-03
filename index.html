@@ -5,10 +5,8 @@
 
 
 <script>
-    const screenWidth = window.screen.width
-    const qrWidth = screenWidth * 0.8
-
-    console.log(screenWidth, qrWidth)
+    const clientWidth = document.documentElement.clientWidth
+    const qrWidth = Math.round(clientWidth * 0.8)
 
     const html5QrCode = new Html5Qrcode("reader");
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
