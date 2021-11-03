@@ -1,14 +1,16 @@
+
+<meta name="viewport" content= "width=device-width, user-scalable=no">
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
+<body>
+    <div id="reader" width="100%"></div>
 
-<div id="reader" width="100%"></div>
-
-<p id="resultat">Resultat</p>
-
+    <h3 id="resultat">Resultat</h3>
+</body>
 
 <script>
     const clientWidth = document.documentElement.clientWidth
-    const qrWidth = Math.round(clientWidth * 0.5)
+    const qrWidth = Math.round(clientWidth * 0.7)
 
     const html5QrCode = new Html5Qrcode("reader");
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
