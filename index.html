@@ -1,16 +1,19 @@
 <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
 
 
-<div id="reader" width="600px" height="600px"></div>
+<div id="reader" width="100%"></div>
+
+<p id="resultat">Resultat</p>
 
 
 <script>
     const clientWidth = document.documentElement.clientWidth
-    const qrWidth = Math.round(clientWidth * 0.8)
+    const qrWidth = Math.round(clientWidth * 0.5)
 
     const html5QrCode = new Html5Qrcode("reader");
     const qrCodeSuccessCallback = (decodedText, decodedResult) => {
         /* handle success */
+        document.getElementById("resultat").innerHTML = decodedText
     };
     const config = { fps: 5, qrbox: { width: qrWidth, height: qrWidth } };
 
